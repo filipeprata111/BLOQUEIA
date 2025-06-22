@@ -13,37 +13,38 @@ Currently it's pretty "vanilla" — but I’m planning to add a couple of stuffs
 
    ```bash
    python app.py
-
+s
 
 ✅ Extended Features for My App
-DNS-based blocking
 
-Add scheduling functionality
+1 - DNS-based blocking
+
+2 - scheduling functionality
 Allow users to block/unblock websites based on time — for example, only allow social media during specific hours of the day.
 
-Password protection for app access
+3 - Password protection for app access
 
-Live logs and activity reports
+4 - Live logs and activity reports
 Show a dashboard with logging for blocked access attempts or timestamps of when sites were blocked/unblocked.
 
-System tray integration
+5 - System tray integration
 
-Whitelist mode
+6 - Whitelist mode
 
-Remote control via web
+7 - Remote control via web
 Using a small web server to allow remote control via browser.
 
-Custom redirect page for blocked sites
+8 - Custom redirect page for blocked sites
 When a site is blocked, show a friendly or informative page instead of a browser error (requires a local web server).
 
-Stealth mode
+9 - Stealth mode
 Hide the app completely from the taskbar and prevent it from being stopped by casual users.
 
-Auto-start on system boot
+10 - Auto-start on system boot
 Configure the app to launch automatically with the system so it’s always active.
 
-Parental control integration
+11 -Parental control integration
 Integrate with or mimic basic parental control features, including time limits, usage tracking, and age-based content filtering.
 
-VPN and proxy detection/blocking
+12 - VPN and proxy detection/blocking
 Prevent users from bypassing restrictions via VPNs or proxies by detecting or blocking those connections.
