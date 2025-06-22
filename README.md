@@ -1,47 +1,49 @@
-#### BLOQUEIA
+# BLOQUEIA
 
-A simple and straighforward program with the capabilites of blocking websites. currently it's pretty "vanilla" - but am planning to add a couple of stuffs to make it more robust... 
+A simple and straightforward program with the capabilities of blocking websites.  
+Currently it's pretty "vanilla" — but I’m planning to add a couple of stuffs to make it more robust...
 
-=====================================================================================================================
+---
 
-#####  How to run it? 
-1 - Download the script 
-2 - Run command prompt with adm privilege's and run "python app.py" on the source  folder. 
+## How to run it?
 
-that should open the GUI app that you use to block, unblock and monitor with sites is being currently being blocked. 
+1. Download the script  
+2. Run Command Prompt with administrator privileges  
+3. In the source folder, run:
 
-=====================================================================================================================
+   ```bash
+   python app.py
 
-✅ Extended Feature for my App: 
 
- - DNS-based blocking
+✅ Extended Features for My App
+DNS-based blocking
 
- - Add scheduling functionality
-   - Allow users to block/unblock websites based on time — for example, only allow social media during specific hours of the day.
+Add scheduling functionality
+Allow users to block/unblock websites based on time — for example, only allow social media during specific hours of the day.
 
- - Password protection for app access
+Password protection for app access
 
- - Live logs and activity reports
-   - Show a dashboard with logging for blocked access attempts or timestamps of when sites were blocked/unblocked.
+Live logs and activity reports
+Show a dashboard with logging for blocked access attempts or timestamps of when sites were blocked/unblocked.
 
-- System tray integration
-- Whitelist mode
+System tray integration
 
-- Remote control via web
-  - using a small web server to allow remote control via browser.
+Whitelist mode
 
- - Custom redirect page for blocked sites
-   - When a site is blocked, show a friendly or  informative  page instead of a browser error (requires a  local web server).
+Remote control via web
+Using a small web server to allow remote control via browser.
 
-- Stealth mode
-  - Hide the app completely from the taskbar and prevent it from being stopped by casual users.
+Custom redirect page for blocked sites
+When a site is blocked, show a friendly or informative page instead of a browser error (requires a local web server).
 
-- Auto-start on system boot
-  - Configure the app to launch automatically with the system so it’s always active.
+Stealth mode
+Hide the app completely from the taskbar and prevent it from being stopped by casual users.
 
- - Parental control integration
-   - Integrate with or mimic basic parental control features, including time limits, usage tracking, and age-based content filtering.
+Auto-start on system boot
+Configure the app to launch automatically with the system so it’s always active.
 
- - VPN and proxy detection/blocking
-   - Prevent users from bypassing restrictions via VPNs or proxies by detecting or blocking those connections.
+Parental control integration
+Integrate with or mimic basic parental control features, including time limits, usage tracking, and age-based content filtering.
 
+VPN and proxy detection/blocking
+Prevent users from bypassing restrictions via VPNs or proxies by detecting or blocking those connections.
