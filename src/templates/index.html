@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbot - Universidade Metodista</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to right, #003366, #0059b3);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.3);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .chat-container {
+      width: 100%;
+      max-width: 700px;
+      background: #f9f9f9;
+      color: black;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      height: 80vh;
+    }
+
+    .chat-box {
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .msg {
+      margin: 0.5rem 0;
+      padding: 0.7rem 1rem;
+      border-radius: 15px;
+      max-width: 80%;
+      word-wrap: break-word;
+      display: inline-block;
+    }
+
+    .msg.user {
+      align-self: flex-end;
+      background-color: #003366;
+      color: white;
+      border-bottom-right-radius: 0;
+    }
+
+    .msg.bot {
+      align-self: flex-start;
+      background-color: #e0f0ff;
+      color: #003366;
+      border-bottom-left-radius: 0;
+    }
+
+    .input-area {
+      display: flex;
+      padding: 1rem;
+      border-top: 1px solid #ccc;
+      background: white;
+      border-radius: 0 0 12px 12px;
+    }
+
+    .input-area input {
+      flex: 1;
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+      transition: border 0.3s;
+    }
+
+    .input-area input:focus {
+      border-color: #0066cc;
+    }
+
+    .input-area button {
+      margin-left: 0.5rem;
+      padding: 0.8rem 1.2rem;
+      background-color: #0066cc;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .input-area button:hover {
+      background-color: #004c99;
+    }
+
+    .dot-loader span {
+      animation: blink 1s infinite;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin: 0 2px;
+      color: #0066cc;
+    }
+
+    .dot-loader span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .dot-loader span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes blink {
+      0% { opacity: 0.2; }
+      20% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="" alt="">
+    <h1>Chatbot da Universidade Metodista de Angola</h1>
+    <p>Tire suas dúvidas com nosso assistente virtual</p>
+  </header>
+
+  <main>
+    <div class="chat-container">
+      <div class="chat-box" id="chat-box"></div>
+
+      <div class="input-area">
+        <input type="text" id="mensagem" placeholder="Digite sua pergunta..." onkeydown="verificaEnter(event)" />
+        <button onclick="enviarMensagem()">Enviar</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <br>© 2025 Universidade Metodista de Angola. Todos os direitos reservados.
+  </footer>
+
+  <script>
+  async function enviarMensagem() {
+    const input = document.getElementById("mensagem");
+    const chat = document.getElementById("chat-box");
+    const texto = input.value.trim();
+    if (!texto) return;
+
+    // Exibe a pergunta do usuário
+    chat.innerHTML += `<div class="msg user"><strong>Você:</strong> ${texto}</div>`;
+
+    // Mostra o indicador de "pensando..."
+    const loaderId = "bot-loader-" + Date.now();
+    chat.innerHTML += ` 
+      <div class="msg bot" id="${loaderId}">
+        <strong>Bot:</strong> <span class="dot-loader">
+          <span>.</span><span>.</span><span>.</span>
+        </span>
+      </div>`;
+    chat.scrollTop = chat.scrollHeight;
+
+    input.value = "";
+
+    // Espera de 0.5 segundos
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    // Agora pega a resposta real do bot
+    const resposta = await fetch("/perguntar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mensagem: texto })
+    });
+
+    const dados = await resposta.json();
+
+    // Substitui o loader pela resposta real
+    const loaderEl = document.getElementById(loaderId);
+    if (loaderEl) {
+      loaderEl.innerHTML = `<strong>Bot:</strong> ${dados.resposta}`;
+    }
+
+    chat.scrollTop = chat.scrollHeight;
+  }
+
+  // Permitir usar Enter para enviar
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("mensagem").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        enviarMensagem();
+      }
+    });
+  });
+  </script>
+
+</body>
+</html>
