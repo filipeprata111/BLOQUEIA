@@ -10,11 +10,13 @@ Since at least half of the questions people seem to have are generic and not spe
 
 1. Clone the repo.  
 2. Install the dependencies.  
-3. Train the answers using `treinador.py` and your own questions.  
+3. Train the answers using `python treinador.py` and your own questions.  
    (Save the questions in a `.txt` file inside the `dados` folder.)  
-4. Run the main script.
+4. Run the main script using `python main.py` 
+
 
 After running the app, it should redirect you to a website where you can ask questions to the bot.
+(or just paste `http://127.0.0.1:5000` on your browser)
 
 ---
 
