@@ -1,41 +1,6 @@
-como rodar o app ou site?
-
-1 - instalar python
-2 - instalar as dependecias. elas sao o chatterbot, chatterbot-corpus, spacy, jupyter e o flask, notebook , etc.
-para instalar elas roda os comandos abaixo no terminal na pasta onde estao o projeto:
-
-comandos:
 pip3 install chatterbot
 pip3 install chatterbot-corpus 
 pip3 install pyyamal
 python3 -m spacy download en
 pip3 install spacy
-pip3 install jupyter
-pip3 install notebook
 pip3 install flask
-
------------------------------------------------------------------------------------------------------------------------------------
-
-
-O arquivo chatbot2-isma-luterio contem 2 arquivos. src e o templates. o src contem os codigos python, o treinador.py e o main.py
-e a pasta template contem a pagina web, o index.html
-
-O que e preciso para rodar o chatbot?
-
-1 - base de dados com as perguntas e respostas. No arquivo treinador.py contem a logica do codiog e ja tem algumas perguntas e repostas 
-para testar mas se e para criar um bom chatbot e preciso de muitas mais do que isto, 
-tens de ter muitas perguntas e respostas e se puder algumas variacoes de respostas.
-
-2 - Como criar a base de dados com as perguntas e repostas ? 
-Para criar a base de dados com as perguntas e respostas, utilizamos o arquivo treinador.py, depois de adicionar todas as perguntas 
-e as suas repostas nele, isto e, editar manualmente o arquivo e escrever as  perguntas e respostas vai no terminal, 
-certifica -te que estas na pasta src, e roda o codigo "python treinador.py", sem parenteses, se nao houver erro 
-deve imprimir uma mensagem de sucesso e um novo arquivo deve ser criado.
-
-3 - Depois de criar a base de dados ja podes rodar o programa, para isso basta rodar o main.py no terminal utilizando o comando "python main.py",
-isso vai imprimir algumas mensagens no terminal e dizer que o app esta a rodar. tbm deve aparecer alguma coisa a falar de port e um endereco como "http://127.0.0.1:5000",
-no meu computador o endereco para aceder a pagina e o "http://127.0.0.1:5000", basta rodar "http://127.0.0.1:5000" no navegador como se quisesses
-aceder a essa pagina e vai te levar ao site do chatbot. se por alguma razao nao funcionar e nada aparecer, verifica se estas a rodar o programa, e a porta utilizada no terminal,
-o numero 5000 no endereco "http://127.0.0.1:5000" e a porta da minha maquina mas se por alguma razao nao funconar na tua verifica esse valor.
-
-4 - para fechar o programa vai ate o terminal e usao comando ctrl + c, isso deve fechar o programas
