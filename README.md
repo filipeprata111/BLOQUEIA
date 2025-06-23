@@ -1,7 +1,7 @@
 # Chatbot
 
 A chatbot to answer questions people may have about the Methodist University of Angola.  
-Currently, I've added more than 400 questions and answers people may have about the university, but it's a work in progress.  
+Currently, I've added more than 200 questions and answers people may have about the university, but it's a work in progress.  
 Since at least half of the questions people seem to have are generic and not specific at all, I'm thinking about integrating an AI model to deal with the basic chatter, while I manually train it to handle the specific questions.
 
 ---
