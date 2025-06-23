@@ -1,50 +1,28 @@
-# BLOQUEIA
+# Chatbot
 
-A simple and straightforward program with the capabilities of blocking websites.  
-Currently it's pretty "vanilla" — but I’m planning to add a couple of stuffs to make it more robust...
+A chatbot to answer questions people may have about the Methodist University of Angola.  
+Currently, I've added more than 300 questions and answers people may have about the university, but it's a work in progress.  
+Since at least half of the questions people seem to have are generic and not specific at all, I'm thinking about integrating an AI model to deal with the basic chatter, while I manually train it to handle the specific questions.
 
 ---
 
 ## How to run it?
 
-1. Download the script  
-2. Run Command Prompt with administrator privileges  
-3. In the source folder, run:
+1. Clone the repo.  
+2. Install the dependencies.  
+3. Train the answers using `treinador.py` and your own questions.  
+   (Save the questions in a `.txt` file inside the `dados` folder.)  
+4. Run the main script.
 
-   ```bash
-   python app.py
-s
+After running the app, it should redirect you to a website where you can ask questions to the bot.
 
-✅ Extended Features for My App
+---
 
-1 - DNS-based blocking
+## Future features?
 
-2 - scheduling functionality
-Allow users to block/unblock websites based on time — for example, only allow social media during specific hours of the day.
+- Possibly expand the bot to handle general questions about higher education in Angola (e.g., other colleges or universities).  
 
-3 - Password protection for app access
+## Notes
 
-4 - Live logs and activity reports
-Show a dashboard with logging for blocked access attempts or timestamps of when sites were blocked/unblocked.
-
-5 - System tray integration
-
-6 - Whitelist mode
-
-7 - Remote control via web
-Using a small web server to allow remote control via browser.
-
-8 - Custom redirect page for blocked sites
-When a site is blocked, show a friendly or informative page instead of a browser error (requires a local web server).
-
-9 - Stealth mode
-Hide the app completely from the taskbar and prevent it from being stopped by casual users.
-
-10 - Auto-start on system boot
-Configure the app to launch automatically with the system so it’s always active.
-
-11 -Parental control integration
-Integrate with or mimic basic parental control features, including time limits, usage tracking, and age-based content filtering.
-
-12 - VPN and proxy detection/blocking
-Prevent users from bypassing restrictions via VPNs or proxies by detecting or blocking those connections.
+I'm not really thinking of adding new features.  
+To be honest, I don’t enjoy building chatbots — it's boring — but I’m going to complete the project.
