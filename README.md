@@ -9,7 +9,7 @@ Since at least half of the questions people seem to have are generic and not spe
 ## How to run it?
 
 1. Clone the repo.  
-2. Install the dependencies.  
+2. Install the dependencies. (it's a good ideia to use a virtual environment here)
 3. Train the answers using `python treinador.py` and your own questions.  
    (Save the questions in a `.txt` file inside the `dados` folder.)  
 4. Run the main script using `python main.py` 
@@ -19,6 +19,7 @@ After running the app, it should redirect you to a website where you can ask que
 (or just paste `http://127.0.0.1:5000` on your browser)
 
 ---
+
 
 ## Future features?
 
